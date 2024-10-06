@@ -1,2 +1,3 @@
 
-    // Jika  100 - 200 lembar menjadi 100
+    'C':  WriteL('Normal');
+    end

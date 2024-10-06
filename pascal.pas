@@ -2,7 +2,6 @@ program main;
 uses crt;
 
 var lembar : Integer;
-
 begin
     writeln('          FotoCopy Lancar jaya     ');
     writeln('--------------------------------------');
