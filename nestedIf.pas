@@ -36,7 +36,7 @@ begin
                    salary := 5000000;
                     subsidy := 2500000;
                 total := salary + subsidy;
-                   writeln('Your salary is = ' , salary);
+                   writeln('Your salary is = ' , total);
                 end
                 else
                 writeln('Invalid');

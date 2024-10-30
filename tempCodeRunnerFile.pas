@@ -1,1 +1,2 @@
-3000000
+
+        writeln('input salah');
