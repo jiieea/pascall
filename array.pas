@@ -1,33 +1,47 @@
-program Main;
+program main;
+
 uses crt;
 
-var number : array[1..10] of integer; // [10,2,3,4,8,14,1,19,15,17]
-hasil : array[1..10] of integer; 
-i,j : integer;
+type 
+    ArrayInt = array of integer;
+
+    var
+    A : ArrayInt;
+    n , x , indeks , i : Integer;
+    findOrNot : Boolean;
+
 
 begin
-    number[1] := 10; number[2] := 2; number[3] := 3; number[4] := 4; number[5] := 8;
-    number[6] := 14; number[7] := 1; number[8] := 19; number[9] := 15; number[10]:= 17;
+  Write('masukan ukuran array = ');
+  ReadLn(n);
+  SetLength(A , n);
 
-    j := 0 ;// Menginisiasi indeks hasil filter
+    Write('masukan element array = ');
+    for i := 0 to n - 1 do
+      begin
+        Read(A[i]);
+      end;
+
+      WriteLn('Masukan eleement yang dicari = ');
+      ReadLn(x);
+
+      findOrNot := False; // nilai default bahwa nilai masih belum ditemukan
+      indeks := 0; // inisialisasi indks array
+
+      for i := 0 to n - 1 do
+        begin
+          if A[i] = x then
+          begin
+            indeks := i;
+            findOrNot := True;
+            break; // jika ditemukan, lakukan break loop
+          end;
+        end;
 
 
-    // looping element array
-    for i := 1 to 10 do 
-    begin
-        if number[i] mod 2 <> 0 then // Jika nilai element ganjil
-        begin 
-        j := j + 1; // Meningkatkan indeks hasil filter
-            hasil[j] := number[i];
-    end;
-    end;
-
-    // Menampilkan hasil filter
-    WriteLn('Hasil Filter:');
-    for i := 1 to j do
-     begin
-        WriteLn(hasil[i]);
-    end;
-
-    ReadLn; // Menunggu input user
+        if findOrNot then
+          WriteLn('Element ' , x , ' ditemukan di indeks ke = ' , indeks , findOrNot)
+          else 
+          WriteLn('Element tidak ditemukan di array');
+          ReadLn;
 end.
